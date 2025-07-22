@@ -26,3 +26,6 @@ lerna-debug.log*
 *.json
 serviceAccountKey.*
 erp-module-challenge-firebase-adminsdk-fbsvc-3dce2ee235.*
+
+# Permite vercel.json (y otros JSON importantes)
+!vercel.json
