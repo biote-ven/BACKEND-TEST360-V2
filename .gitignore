@@ -15,17 +15,21 @@ lerna-debug.log*
 
 # dotenv environment variable files
 .env
-.env.development
-.env.test
-.env.production
+.env.*
+!.env.example
 
 # temp directory
 .temp
 .tmp
 
-*.json
+# Archivos JSON específicos a ignorar (no todos)
 serviceAccountKey.*
 erp-module-challenge-firebase-adminsdk-fbsvc-3dce2ee235.*
+firebase-admin-keys.json
 
-# Permite vercel.json (y otros JSON importantes)
+# Permite JSON críticos
+!package.json
+!package-lock.json
+!tsconfig.json
+!nest-cli.json
 !vercel.json
