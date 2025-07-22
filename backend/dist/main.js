@@ -6,5 +6,5 @@ async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     await app.listen(process.env.PORT ?? 3000);
 }
-bootstrap();
+module.exports = bootstrap().then(app => app.getHttpAdapter().getInstance());
 //# sourceMappingURL=main.js.map

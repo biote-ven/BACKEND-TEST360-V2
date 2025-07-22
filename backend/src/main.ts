@@ -6,6 +6,6 @@ async function bootstrap() {
   await app.listen(process.env.PORT ?? 3000);
 }
 
-/*bootstrap();*/
+//bootstrap();
 // Export para Vercel
 module.exports = bootstrap().then(app => app.getHttpAdapter().getInstance());
