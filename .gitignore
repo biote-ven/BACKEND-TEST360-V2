@@ -23,7 +23,7 @@ lerna-debug.log*
 .tmp
 
 # Archivos JSON específicos a ignorar (no todos)
-serviceAccountKey.*
+serviceAccountKey.json
 erp-module-challenge-firebase-adminsdk-fbsvc-3dce2ee235.*
 firebase-admin-keys.json
 
