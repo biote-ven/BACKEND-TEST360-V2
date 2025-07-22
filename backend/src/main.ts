@@ -3,13 +3,15 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(process.env.PORT ?? 3000);
 
-   // Exportación para Vercel
+// Adaptación para Vercel
   if (process.env.VERCEL) {
-    return app.getHttpAdapter().getInstance();
+    await app.init(); // Inicializa sin levantar el servidor HTTP
+    return app.getHttpAdapter().getInstance(); // Exporta para Vercel
   } else {
-    await app.listen(3000);
+    // Modo desarrollo local
+    await app.listen(process.env.PORT || 3000);
+    console.log(`🚀 Servidor local en http://localhost:${process.env.PORT || 3000}`);
   }
 }
 
