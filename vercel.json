@@ -5,9 +5,8 @@
       "src": "backend/src/main.ts",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["backend/dist/**",
-        "backend/node_modules/**"],
-        "maxLambdaSize": "50mb"
+        "includeFiles": ["backend/dist/**"],
+        "maxLambdaSize": "250mb"
       }
     }
   ],
@@ -16,5 +15,11 @@
       "src": "/(.*)",
       "dest": "backend/src/main.ts"
     }
-  ]
+  ],
+  "functions": {
+    "backend/src/main.ts": {
+      "memory": 3008,
+      "maxDuration": 30
+    }
+  }
 }

@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "vercel-build": "npm run build && npm prune --production",
+    "vercel-build": "npm run build && npm prune --production && npx modclean -n default:safe,default:caution -r",
     "start": "node dist/main",
     "build": "nest build --webpack=false",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
